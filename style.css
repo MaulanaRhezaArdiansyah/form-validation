@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap");
+
 /* *! changing default styles of browser */
 * {
   margin: 0;
@@ -5,11 +7,43 @@
   box-sizing: border-box;
 }
 body {
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
+  font-family: "Poppins", sans-serif;
 }
+.container {
+  display: flex;
+}
+/* *! style rules for content section */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #f2796e;
+  width: 55%;
+  min-height: 100vh;
+  padding: 10px 20px;
+}
+.image {
+  background-image: url("./images/illustration.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 65%;
+}
+.text {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+}
+
 /* *! style rules for form browser */
 form {
-  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 45%;
+  /* max-width: 400px; */
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   padding: 50px;
 }
@@ -38,6 +72,46 @@ form > div {
 input:focus {
   border: 2px solid #f2796e;
 }
+
+/* *! style rules for social section */
+.btn {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.btn-1,
+.btn-2 {
+  padding: 10px 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border: 2px solid #c4c4c4;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.btn-2 {
+  background-color: #4f70b5;
+  color: white;
+}
+.or {
+  text-align: center;
+}
+.question {
+  font-size: 15px;
+}
+span {
+  color: #f2796e;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 5px;
+  display: inline-block;
+}
+
 /* *! style rules for form icons */
 form > div > i {
   position: absolute;
@@ -78,3 +152,23 @@ button:hover {
   opacity: 0.8;
 }
 /* *! Media Queries */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+  form,
+  .content {
+    width: 100%;
+  }
+  .btn {
+    flex-direction: column;
+  }
+  .image {
+    height: 70vh;
+  }
+}
+@media (max-width: 425px) {
+  form {
+    padding: 20px;
+  }
+}
